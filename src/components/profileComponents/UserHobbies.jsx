@@ -1,9 +1,9 @@
 import { PropTypes } from 'prop-types'
-export const UserHobbies = ({hobbies}) => (
-    <div>
+export const UserHobbies = ({hobbies}) => ( 
+    <>
         <b>Hobbies: </b>
         <ul>{...hobbies}</ul>
-    </div>
+    </>
 )
 
 UserHobbies.propTypes = {
