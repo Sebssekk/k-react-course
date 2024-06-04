@@ -11,7 +11,7 @@ export const UserProfile = () => {
     return <div>
         <UserUsername username={username} />
         <UserAge age={age}/>
-        <UserEmail /*email={email}*/ />
+        <UserEmail email={email} />
         <section>
             <UserHobbies hobbies={hobbies}/>
         </section>

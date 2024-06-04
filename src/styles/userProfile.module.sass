@@ -1,0 +1,14 @@
+@mixin card($theme: darkGrey)
+  background: $theme
+  box-shadow: 3px 3px 5px rgba($theme, .25)
+  color: #fff
+  width: 50%
+  display: block
+  mrgin: auto
+  text-align: center
+  padding: 5px
+  border-radius: 5px
+
+.card 
+  @include card(darkGreen)
+  margin-bottom: 50px
