@@ -9,9 +9,9 @@ export const UserProfile = () => {
     const hobbies = ["Coding", "Training", "Circus"]
     const email = "seb@example.com"
     return <div>
-        <UserUsername username={username}/>
+        <UserUsername username={username} />
         <UserAge age={age}/>
-        <UserEmail email={email}/>
+        <UserEmail /*email={email}*/ />
         <section>
             <UserHobbies hobbies={hobbies}/>
         </section>

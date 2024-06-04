@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types'
 export const UserUsername = (props) => {
     
     const {username} = props
@@ -7,4 +8,8 @@ export const UserUsername = (props) => {
             "\\../" + username.toUpperCase() + "\\../"
         }</span>
     </div>
+}
+
+UserUsername.propTypes = {
+    username: PropTypes.string.isRequired
 }
