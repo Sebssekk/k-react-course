@@ -1,6 +1,7 @@
+import { PropTypes } from 'prop-types'
 import { UserDetails } from "./UserDetails"
 
-export const UsersList = () => {
+export const UsersList = ({isAuthenticated}) => {
     const users= [
         { 
             age: 21,
@@ -28,8 +29,6 @@ export const UsersList = () => {
         },
         
     ]
-
-    const isAuthenticated = true
     
     // userType: ADMIN | COMMON | DISABLED
     const userType = "COMMON"
@@ -74,4 +73,8 @@ export const UsersList = () => {
                 </h1>}
         </section>
     </div>
+}
+
+UsersList.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
 }
