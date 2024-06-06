@@ -32,7 +32,7 @@ export const UsersList = () => {
             <h1 className="text-2xl font-bold text-center p-5">Current Users</h1>
             <div className="flex gap-5 justify-center">
             {users.map(u => (
-                <div className="flex flex-col py-5 bg-slate-500 shadow-md w-36 rounded-lg">
+                <div key={u.email} className="flex flex-col py-5 bg-slate-500 shadow-md w-36 rounded-lg">
                     <h1 className="font-semibold text-center">{u.username}</h1>
                     <p className="italic text-center text-xs">{u.email}</p>
                     <p className="text-center">
@@ -43,7 +43,7 @@ export const UsersList = () => {
                         <p className="text-center underline pb-2">&#x2022; Hobbies &#x2022;</p>
                         <ul className="flex flex-col gap-1 items-center">
                             {u.hobbies.map(h => 
-                                <li className="bg-gray-600 w-28 rounded-xl text-center justify-center">{h}</li>
+                                <li key={h} className="bg-gray-600 w-28 rounded-xl text-center justify-center">{h}</li>
                                 )}
                         </ul>
                     </div>
