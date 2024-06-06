@@ -29,14 +29,24 @@ export const UsersList = () => {
         
     ]
 
+    const isAuthenticated = false
+
+    const renderedUsers = <div className="flex gap-5 justify-center">
+        {users.map(u => (
+            <UserDetails user={u} key={u.email}/>
+        ))}
+    </div>
+
     return <div>
-        <section>
+        <section className="flex items-center justify-center flex-col">
             <h1 className="text-2xl font-bold text-center p-5">Current Users</h1>
-            <div className="flex gap-5 justify-center">
-            {users.map(u => (
-                <UserDetails user={u} key={u.email}/>
-            ))}
-            </div>
+            {isAuthenticated ? renderedUsers : 
+                <h1 className="text-red-500 p-3 
+                                font-semibold text-center 
+                                border-red-900 rounded-xl 
+                                border-solid border-2 w-fit">
+                    !! You must be logged in to see list of users !!
+                </h1>}
         </section>
     </div>
 }
