@@ -1,5 +1,9 @@
+import { useState } from "react"
+
 export const LoginForm = () => {
-    
+    const [usernameState, setUsername] = useState('')
+    const [passwordState, setPassword] = useState('')
+
     const handleChange = (changeEvent) => {
         console.log(`****
         CHANGE EVENT
@@ -18,8 +22,19 @@ export const LoginForm = () => {
         submitEvent.preventDefault()
         console.log(`****
         -- SUBMIT EVENT --
-        Event trigger: ${submitEvent.target.id}
-        ****`)
+        `)
+        console.log(`Username: ${usernameState}`)
+        console.log(`Password: ${passwordState}`)
+        // fetch('http://login-backend/api/login',{
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         username: usernameState,
+        //         password: passwordState
+        //     })
+        // })
     }
     
     return (
@@ -33,20 +48,28 @@ export const LoginForm = () => {
                 <label className="text-xs" htmlFor="username">Username</label><br />
                 <input className="rounded-lg px-1 font-thin italic bg-blue-950" 
                     type="text" id="username"
-                    onChange={handleChange}
+                    //onChange={handleChange}
+                    onChange={(e) => {setUsername(e.currentTarget.value)}}
+                    value={usernameState}
                     onBlur={handleBlur}/>
             </div>
             <div>
                 <label className="text-xs" htmlFor="password">Password</label><br />
                 <input className="rounded-lg px-1 bg-blue-950" 
                     type="password" id="password"
-                    onChange={handleChange}
+                    //onChange={handleChange}
+                    onChange={(e) => {setPassword(e.currentTarget.value)}}
+                    value={passwordState}
                     onBlur={handleBlur}/>
             </div>
             <br />
-            <input className="border-2 py-1 px-2 rounded-md 
-                            border-blue-950 bg-blue-600" 
-                    type="submit" value="Login" />
+            <input className={`border-2 py-1 px-2 rounded-md 
+                            ${(!usernameState || !passwordState)?
+                                "border-gray-950 bg-gray-600 text-gray-400":
+                                "border-blue-950 bg-blue-600 hover:bg-blue-400 hover:border-blue-500"} 
+                            `}
+                    type="submit" disabled={!usernameState || !passwordState}
+                    value="Login" />
             </form>
         </div>
     )
