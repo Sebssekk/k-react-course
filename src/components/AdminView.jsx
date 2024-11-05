@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { UserDetails } from "./UserDetails"
 
 export const AdminView = () => {
@@ -38,6 +38,11 @@ export const AdminView = () => {
         },
         
     ])
+
+    useEffect(() => {
+        console.log("Time to run...")
+        document.title = `Users: ${users.length}`
+    }, [users])
 
     const renderedUsers = <div className="flex gap-5 justify-center">
         {users.map(u => ( 
