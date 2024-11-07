@@ -39,18 +39,20 @@ export const AdminView = () => {
         
     // ])
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users").then(
-            response => {
-                response.json().then(payload => {
-                    console.log(payload)
-                    setUsers(payload)
-                })
-            }
-        )
-        //setUsers([
-        //    ...fetchedUsers
-        //])
-
+        //fetch("https://jsonplaceholder.typicode.com/users").then(
+        //    response => {
+        //        response.json().then(payload => {
+        //            console.log(payload)
+        //            setUsers(payload)
+        //        })
+        //    }
+        //)
+        const fetchUsers = async () => {
+            const res = await fetch("https://jsonplaceholder.typicode.com/users")
+            const fetchedUsers = await res.json()
+            setUsers(fetchedUsers)
+        }
+        fetchUsers()
     },[])
 
     useEffect(() => {
