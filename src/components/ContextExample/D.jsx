@@ -3,6 +3,7 @@ import { CountContext } from "./Root"
 import { MSG_CHANGE } from "./reducers"
 
 export const D = () => {
+    console.log("D Component Rendering")
     const {dispatch} = useContext(CountContext)
     const [msg, setMsg] = useState('')
     const handleSubmit=(e) => {

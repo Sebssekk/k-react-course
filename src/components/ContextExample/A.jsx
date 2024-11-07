@@ -1,6 +1,7 @@
 import { C } from "./C"
 
 export const A = () => {
+  console.log("A Component Rendering")
   return (
     <div className="context-example flex-col 
                 border-purple-800 

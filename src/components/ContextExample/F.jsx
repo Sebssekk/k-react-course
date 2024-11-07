@@ -3,8 +3,8 @@ import { CountContext } from "./Root"
 import { ADD } from "./reducers"
 
 export const F = () => {
+    console.log("F Component Rendering")
     const {dispatch} = useContext(CountContext)
-
     return (
       <div className="context-example 
                 border-yellow-500 

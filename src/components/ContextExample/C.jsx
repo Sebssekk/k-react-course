@@ -3,6 +3,7 @@ import { F } from "./F"
 import { G } from "./G"
 
 export const C = () => {
+  console.log("C Component Rendering")
   return (
     <div className="flex-col context-example 
                 border-green-800 

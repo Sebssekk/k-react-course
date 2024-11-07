@@ -4,6 +4,7 @@ import { CountContext } from './Root'
 import { VALUE_CHANGE } from './reducers'
 
 export const B = () => {
+  console.log("B Component Rendering")
   const {state, dispatch} = useContext(CountContext)
   const [value, setValue] = useState(0)
   const handleSubmit= (e) => {

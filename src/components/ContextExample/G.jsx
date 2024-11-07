@@ -3,6 +3,8 @@ import { CountContext } from "./Root"
 import { SUB } from "./reducers"
 
 export const G = () => {
+    console.log("G Component Rendering")
+
     const {dispatch} = useContext(CountContext)
     return (
       <div className="context-example border-yellow-500 text-yellow-500">

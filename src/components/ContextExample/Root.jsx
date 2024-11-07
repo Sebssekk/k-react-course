@@ -6,8 +6,9 @@ import { initState, reducer } from "./reducers"
 export const CountContext = React.createContext()
 
 export const Root = () => {
-    //const [count,setCount] = useState(0)
-    const [state, dispatch] = useReducer(reducer,initState)
+  console.log("Root Component Rendering")
+  //const [count,setCount] = useState(0)  
+  const [state, dispatch] = useReducer(reducer,initState)
   return (
     <CountContext.Provider value={{state,dispatch}}>
     <div className="context-example" >
