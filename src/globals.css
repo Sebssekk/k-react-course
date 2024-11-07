@@ -7,3 +7,9 @@ body {
     color: whitesmoke;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+@layer components {
+    .context-example {
+      @apply flex flex-col p-10 pt-3 items-center space-y-5 justify-center rounded-lg border-dashed border-sky-800 border-4 text-sky-800 font-extrabold
+    }
+  }
