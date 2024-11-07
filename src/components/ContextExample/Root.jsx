@@ -1,10 +1,13 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import {A} from './A'
 import { B } from "./B"
+
+export const CountContext = React.createContext()
 
 export const Root = () => {
     const [count,setCount] = useState(0)
   return (
+    <CountContext.Provider value={{count,setCount}}>
     <div className="context-example" >
         Root
         <br />
@@ -14,9 +17,10 @@ export const Root = () => {
                 <p className="text-center">Count : {count}</p>
         </div>
         <div className="flex space-x-5">
-            <A setCount={setCount}/>
-            <B count={count}/>
+            <A/>
+            <B/>
         </div>
     </div>
+    </CountContext.Provider>
   )
 }

@@ -1,4 +1,8 @@
-export const G = ({setCount}) => {
+import { useContext } from "react"
+import { CountContext } from "./Root"
+
+export const G = () => {
+    const {setCount} = useContext(CountContext)
     return (
       <div className="context-example border-yellow-500 text-yellow-500">
          <h1>Component G</h1>

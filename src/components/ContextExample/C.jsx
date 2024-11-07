@@ -2,7 +2,7 @@ import { E } from "./E"
 import { F } from "./F"
 import { G } from "./G"
 
-export const C = ({setCount}) => {
+export const C = () => {
   return (
     <div className="flex-col context-example 
                 border-green-800 
@@ -10,8 +10,8 @@ export const C = ({setCount}) => {
         <h1>Component C</h1>
         <div className="flex space-x-3">
         <E/>
-        <F setCount={setCount}/>
-        <G setCount={setCount}/> 
+        <F/>
+        <G/> 
         </div>
     </div>
   )
