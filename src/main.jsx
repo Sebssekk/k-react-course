@@ -10,7 +10,7 @@ import { ReducerCounter } from './components/ReducerCounter'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App/> */}
-    {/* <Root/> */}
-    <ReducerCounter/>
+    <Root/>
+    {/* <ReducerCounter/> */}
   </React.StrictMode>,
 )

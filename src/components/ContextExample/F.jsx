@@ -1,8 +1,9 @@
 import { useContext } from "react"
 import { CountContext } from "./Root"
+import { ADD } from "./reducers"
 
 export const F = () => {
-    const {setCount} = useContext(CountContext)
+    const {dispatch} = useContext(CountContext)
 
     return (
       <div className="context-example 
@@ -13,8 +14,8 @@ export const F = () => {
                             shadow-md hover:bg-gray-600 
                             text-yellow-50" 
                 onClick={() => 
-                        setCount((prevstate) => prevstate + 1)}>
-                    +1
+                        dispatch({type: ADD})}>
+                    +
           </button>
                     
       </div>
