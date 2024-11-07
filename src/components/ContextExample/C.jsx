@@ -1,8 +1,9 @@
+import { memo } from "react"
 import { E } from "./E"
 import { F } from "./F"
 import { G } from "./G"
 
-export const C = () => {
+export const C = memo ( () => {
   console.log("C Component Rendering")
   return (
     <div className="flex-col context-example 
@@ -16,4 +17,4 @@ export const C = () => {
         </div>
     </div>
   )
-}
+})

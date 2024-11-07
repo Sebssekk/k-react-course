@@ -1,11 +1,11 @@
-import React, { useState, useReducer } from "react"
+import React, { useState, useReducer, memo } from "react"
 import {A} from './A'
 import { B } from "./B"
 import { initState, reducer } from "./reducers"
 
 export const CountContext = React.createContext()
 
-export const Root = () => {
+export const Root = memo ( () => {
   console.log("Root Component Rendering")
   //const [count,setCount] = useState(0)  
   const [state, dispatch] = useReducer(reducer,initState)
@@ -26,4 +26,4 @@ export const Root = () => {
     </div>
     </CountContext.Provider>
   )
-}
+})

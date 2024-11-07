@@ -1,8 +1,8 @@
-import { useContext } from "react"
+import { memo, useContext } from "react"
 import { CountContext } from "./Root"
 import { SUB } from "./reducers"
 
-export const G = () => {
+export const G = memo(() => {
     console.log("G Component Rendering")
 
     const {dispatch} = useContext(CountContext)
@@ -17,4 +17,4 @@ export const G = () => {
       </div>
     )
   }
-  
+)

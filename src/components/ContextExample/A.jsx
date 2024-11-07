@@ -1,6 +1,7 @@
+import { memo } from "react"
 import { C } from "./C"
 
-export const A = () => {
+export const A = memo ( () => {
   console.log("A Component Rendering")
   return (
     <div className="context-example flex-col 
@@ -11,3 +12,4 @@ export const A = () => {
     </div>
   )
 }
+)

@@ -1,8 +1,8 @@
-import { useContext, useState } from "react"
+import { memo, useContext, useState } from "react"
 import { CountContext } from "./Root"
 import { MSG_CHANGE } from "./reducers"
 
-export const D = () => {
+export const D = memo (() => {
     console.log("D Component Rendering")
     const {dispatch} = useContext(CountContext)
     const [msg, setMsg] = useState('')
@@ -21,5 +21,5 @@ export const D = () => {
           </form>
       </div>
     )
-  }
+  })
   
