@@ -11,40 +11,62 @@ export const AdminView = () => {
         email: "",
     }) 
     const [deleteUsername, setDeleteUsername] = useState("")
-    const [users, setUsers] = useState([
-        { 
-            age: 21,
-            username: "Seb",
-            hobbies: ["Coding", "Training", "Circus"],
-            email: "seb@example.com",
-        },
-        { 
-            age: 34,
-            username: "Bob",
-            hobbies: ["Linux", "Teaching", "Arts","History"],
-            email: "bob@example.com",
-        },
-        { 
-            age: 16,
-            username: "July",
-            hobbies: ["iOS", "Gymnastic", "Philosophy",],
-            email: "july@example.com",
-        },
-        { 
-            age: 43,
-            username: "Alice",
-            hobbies: ["Gaming", "Painting",],
-            email: "alice@example.com",
-        },
+    const [users, setUsers] = useState([])
+    //     { 
+    //         age: 21,
+    //         username: "Seb",
+    //         hobbies: ["Coding", "Training", "Circus"],
+    //         email: "seb@example.com",
+    //     },
+    //     { 
+    //         age: 34,
+    //         username: "Bob",
+    //         hobbies: ["Linux", "Teaching", "Arts","History"],
+    //         email: "bob@example.com",
+    //     },
+    //     { 
+    //         age: 16,
+    //         username: "July",
+    //         hobbies: ["iOS", "Gymnastic", "Philosophy",],
+    //         email: "july@example.com",
+    //     },
+    //     { 
+    //         age: 43,
+    //         username: "Alice",
+    //         hobbies: ["Gaming", "Painting",],
+    //         email: "alice@example.com",
+    //     },
         
-    ])
+    // ])
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/users").then(
+            response => {
+                response.json().then(payload => {
+                    console.log(payload)
+                    setUsers(payload)
+                })
+            }
+        )
+        //setUsers([
+        //    ...fetchedUsers
+        //])
+
+    },[])
 
     useEffect(() => {
         console.log("Time to run...")
         document.title = `Users: ${users.length}`
+
+        return () =>{
+            // Clean up logic
+            console.log("Unmounting the AdminView Component")
+            document.title = `Vite + React`
+
+        }
+
     }, [users])
 
-    const renderedUsers = <div className="flex gap-5 justify-center">
+    const renderedUsers = <div className="flex gap-5 justify-center flex-wrap ">
         {users.map(u => ( 
             <UserDetails user={u} key={u.email}/>
         ))}

@@ -1,9 +1,11 @@
 import { PropTypes } from 'prop-types'
 import { AdminView } from './AdminView'
+import { Logout } from './Logout';
+import { useState } from 'react';
 
-export const HomePage = ({isAuthenticated}) => {
+export const HomePage = ({isAuthenticated, setIsAuthenticated}) => {
     // userType: ADMIN | COMMON | DISABLED
-    const userType = "ADMIN"
+    const userType="ADMIN"
 
 
     let pageContent; 
@@ -31,6 +33,7 @@ export const HomePage = ({isAuthenticated}) => {
     return <div>
         <section className="flex items-center justify-center flex-col">
             <h1 className="text-2xl font-bold text-center p-5">Current Users</h1>
+            {isAuthenticated ? <Logout logout={()=>{setIsAuthenticated(false)}}/> : null}
             {isAuthenticated ? pageContent : 
                 <h1 className="text-red-500 p-3 
                                 font-semibold text-center 
@@ -44,4 +47,5 @@ export const HomePage = ({isAuthenticated}) => {
 
 HomePage.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
+    setIsAuthenticated: PropTypes.func.isRequired
 }
