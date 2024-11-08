@@ -2,11 +2,13 @@ import React, { useState, useReducer, memo } from "react"
 import {A} from './A'
 import { B } from "./B"
 import { initState, reducer } from "./reducers"
+import { useLogOnRender } from "../hooks/useLogOnRender"
 
 export const CountContext = React.createContext()
 
 export const Root = memo ( () => {
-  console.log("Root Component Rendering")
+  useLogOnRender("ROOT")
+  //console.log("Root Component Rendering")
   //const [count,setCount] = useState(0)  
   const [state, dispatch] = useReducer(reducer,initState)
   return (

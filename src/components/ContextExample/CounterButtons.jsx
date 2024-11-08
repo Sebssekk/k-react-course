@@ -1,7 +1,9 @@
 import React, { memo } from 'react'
+import { useLogOnRender } from '../hooks/useLogOnRender'
 
 export const CounterButtons = memo (({increment,decrement,text}) => {
-    console.log(`***Counter buttonm -${text}- rendered***`)
+    //console.log(`***Counter buttonm -${text}- rendered***`)
+    useLogOnRender("CounterButtons")
   return (
     <div className="bg-gray-800 px-5 py-3 rounded-md shadow-md m-5">
         <div className="flex gap-2">

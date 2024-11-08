@@ -2,9 +2,11 @@ import React, { memo, useContext, useEffect, useMemo, useState } from 'react'
 import { D } from './D'
 import { CountContext } from './Root'
 import { VALUE_CHANGE } from './reducers'
+import { useLogOnRender } from '../hooks/useLogOnRender'
 
 export const B = memo ( () => {
-  console.log("B Component Rendering")
+  //console.log("B Component Rendering")
+  useLogOnRender("B")
   const bigValue = 1000000000
   const complexLogic = useMemo( () => {
     for (let i=0; i< bigValue; i++) {

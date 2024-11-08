@@ -1,9 +1,11 @@
 import { memo, useContext, useState } from "react"
 import { CountContext } from "./Root"
 import { MSG_CHANGE } from "./reducers"
+import { useLogOnRender } from "../hooks/useLogOnRender"
 
 export const D = memo (() => {
-    console.log("D Component Rendering")
+    //console.log("D Component Rendering")
+    useLogOnRender("D")
     const {dispatch} = useContext(CountContext)
     const [msg, setMsg] = useState('')
     const handleSubmit=(e) => {

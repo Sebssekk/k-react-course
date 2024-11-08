@@ -1,9 +1,11 @@
 import { memo, useContext } from "react"
 import { CountContext } from "./Root"
 import { ADD } from "./reducers"
+import { useLogOnRender } from "../hooks/useLogOnRender"
 
 export const F = memo( () => {
-    console.log("F Component Rendering")
+    //console.log("F Component Rendering")
+    useLogOnRender("F")
     const {dispatch} = useContext(CountContext)
     return (
       <div className="context-example 

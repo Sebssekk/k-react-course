@@ -12,9 +12,9 @@ import { Timer } from './components/Timer'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App/> */}
-    {/* <Root/> */}
+    <Root/>
     {/* <ReducerCounter/> */}
     {/* <FocusInput/> */}
-    <Timer/>
+    {/* <Timer/> */}
   </React.StrictMode>,
 )

@@ -2,9 +2,11 @@ import { memo, useCallback, useState } from "react"
 import { Counter } from "../Counter"
 import { CounterButtons } from "./CounterButtons"
 import { CounterTitle } from "./CounterTitle"
+import { useLogOnRender } from "../hooks/useLogOnRender"
 
 export const E = memo(() => {
-  console.log("E Component Rendering")
+  //console.log("E Component Rendering")
+  useLogOnRender("E")
   const [count1, setCount1] = useState(0)
   const [count2, setCount2] = useState(0)
 
