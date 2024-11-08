@@ -1,10 +1,20 @@
-import React, { memo, useContext, useState } from 'react'
+import React, { memo, useContext, useEffect, useMemo, useState } from 'react'
 import { D } from './D'
 import { CountContext } from './Root'
 import { VALUE_CHANGE } from './reducers'
 
 export const B = memo ( () => {
   console.log("B Component Rendering")
+  const bigValue = 1000000000
+  const complexLogic = useMemo( () => {
+    for (let i=0; i< bigValue; i++) {
+      continue
+    }
+    return "DONE Complex Logic"
+  },[bigValue])
+  
+  console.log(complexLogic)
+
   const {state, dispatch} = useContext(CountContext)
   const [value, setValue] = useState(0)
   const handleSubmit= (e) => {
