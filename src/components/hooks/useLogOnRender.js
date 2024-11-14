@@ -5,4 +5,5 @@ export const useLogOnRender = (componentName) => {
     console.log(`**** Component ${componentName} Mounted ****`)
   },[])
   console.log(`[*] --- Component ${componentName} Rendered --- [*]`)
+  return `[*] --- Component ${componentName} Rendered --- [*]`
 }

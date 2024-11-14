@@ -2,6 +2,7 @@ import { memo, useContext } from "react"
 import { CountContext } from "./Root"
 import { SUB } from "./reducers"
 import { useLogOnRender } from "../hooks/useLogOnRender"
+import React from "react"
 
 export const G = memo(() => {
     //console.log("G Component Rendering")
